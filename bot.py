@@ -15,10 +15,8 @@ async def say(ctx, *, message: str):
     await ctx.send(message)
    
    
-   @bot.command()
-
+@bot.command()
 async def ping(ctx):
-
     """Pong! Returns your websocket latency."""
 
     em = discord.Embed()
