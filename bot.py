@@ -13,6 +13,21 @@ async def on_ready():
 async def say(ctx, *, message: str):
     """Say Something As The Bot""" 
     await ctx.send(message)
+   
+   
+   @bot.command()
+
+async def ping(ctx):
+
+    """Pong! Returns your websocket latency."""
+
+    em = discord.Embed()
+
+    em.title ='Pong! Websocket Latency:'
+
+    em.description = f"{bot.ws.latency * 1000:.4f} ms"
+
+    await ctx.send(embed=em)
     
    
 if not os.environ.get('TOKEN'):
