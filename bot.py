@@ -8,6 +8,7 @@ bot = commands.Bot(command_prefix='*',description="This bot is weird. Deal with 
 @bot.event
 async def on_ready():
    print('Bot is online!') 
+
 @bot.command()
 async def say(ctx, *, message: str):
     """Say Something As The Bot""" 
