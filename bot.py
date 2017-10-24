@@ -22,15 +22,9 @@ bot.run(os.environ.get('TOKEN').strip('"'))
 
 
 @bot.command()
-
 async def ping(ctx):
-
     """Pong! Returns your websocket latency."""
-
     em = discord.Embed()
-
     em.title ='Pong! Websocket Latency:'
-
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
-
     await ctx.send(embed=em)
