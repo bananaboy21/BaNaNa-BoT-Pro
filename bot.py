@@ -24,7 +24,7 @@ async def on_ready():
 async def say(ctx, *, message: str):
     """Say Something As The Bot""" 
     await ctx.send(message)
-   
+
    
 @bot.command()
 async def ping(ctx):
@@ -33,6 +33,7 @@ async def ping(ctx):
     em.title ='Pong! Websocket Latency:'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
+    
 
 @bot.command(pass_context=True, hidden=True, name='eval')
 @commands.is_owner()
@@ -81,6 +82,11 @@ async def _eval(ctx, *, body: str):
                 await ctx.send(f'```py\n{value}{ret}\n```')
  
      
+@bot.command()
+async def invite(ctx):
+    await ctx.send("Invite me to your server, for extra dankness: https://discordapp.com/oauth2/authorize?client_id=372129317108580352&scope=bot&permissions=66186303')
+    
+    
 
 if not os.environ.get('TOKEN'):
     print("no token found REEEE!")
