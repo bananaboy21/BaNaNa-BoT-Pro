@@ -88,7 +88,26 @@ async def invite(ctx):
     await ctx.send("Invite me to your server, for extra dankness. https://discordapp.com/oauth2/authorize?client_id=372129317108580352&scope=bot&permissions=66186303")
     
     
-
+@bot.command(name='presence')
+@commands.is_owner()
+async def _set(ctx, Type=None,*,thing=None):
+  """Change the bot's discord game/stream!"""
+  if Type is None:
+    await ctx.send('Usage: `.presence [game/stream] [message]`')
+  else:
+    if Type.lower() == 'stream':
+      await bot.change_presence(game=discord.Game(name=thing,type=1,url='https://www.twitch.tv/a'),status='online')
+      await ctx.send(f'Set presence to. `Streaming {thing}`')
+    elif Type.lower() == 'game':
+      await bot.change_presence(game=discord.Game(name=thing))
+      await ctx.send(f'Set presence to `Playing {thing}`')
+    elif Type.lower() == 'clear':
+      await bot.change_presence(game=None)
+      await ctx.send('Cleared Presence')
+    else:
+      await ctx.send('Usage: `.presence [game/stream] [message]`')
+    
+    
 if not os.environ.get('TOKEN'):
     print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
