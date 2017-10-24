@@ -15,12 +15,7 @@ async def say(ctx, *, message: str):
     """Say Something As The Bot""" 
     await ctx.send(message)
    
-     
-if not os.environ.get('TOKEN'):
-    print("no token found REEEE!")
-bot.run(os.environ.get('TOKEN').strip('"'))
-
-
+   
 @bot.command()
 async def ping(ctx):
     """Pong! Returns your websocket latency."""
@@ -28,3 +23,11 @@ async def ping(ctx):
     em.title ='Pong! Websocket Latency:'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
+
+   
+     
+if not os.environ.get('TOKEN'):
+    print("no token found REEEE!")
+bot.run(os.environ.get('TOKEN').strip('"'))
+
+
