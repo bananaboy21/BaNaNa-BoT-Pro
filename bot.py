@@ -5,7 +5,7 @@ import textwrap
 from contextlib import redirect_stdout
 import traceback
 from discord.ext import commands 
-bot = commands.Bot(command_prefix='*',description="This bot is weird. Deal with it.\n\nHelp Commands",owner_id=277981712989028353)
+bot = commands.Bot(command_prefix='*',description="This bot is weird. Deal with it. Owner: dat banana boi #1982, with help of Free TNT 5796\n\nHelp Commands",owner_id=277981712989028353)
 
 def cleanup_code(content):
     """Automatically removes code blocks from the code."""
