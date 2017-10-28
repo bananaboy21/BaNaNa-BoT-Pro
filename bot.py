@@ -88,6 +88,12 @@ async def invite(ctx):
     await ctx.send("Invite me to your server, for extra dankness. https://discordapp.com/oauth2/authorize?client_id=372129317108580352&scope=bot&permissions=66186303")
     
     
+@bot.command()
+async def discord(ctx):
+    """Join my dank Discord server. For no dank reason."""
+    await ctx.send("Join my Discord. For dank and for other stuff. Join: https://discord.gg/xSFetCJ")
+    
+
 @bot.command(name='presence')
 @commands.is_owner()
 async def _set(ctx, Type=None,*,thing=None):
