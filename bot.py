@@ -115,16 +115,6 @@ async def _set(ctx, Type=None,*,thing=None):
       await ctx.send('Usage: `.presence [game/stream] [message]`')
     
     
- 
-
-def setup(bot):
-
-    bot.add_cog(Music(bot))
-
-
-
-
-
 def duration_to_str(duration):
 
     minutes, seconds = divmod(duration, 60)
