@@ -32,7 +32,7 @@ async def say(ctx, *, message: str):
 async def ping(ctx):
     """Pong! Returns your websocket latency."""
     em = discord.Embed()
-    em.title ='Pong! Websocket Latency:'
+    em.title ='Pong! Here is your websocket latency.'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
     
@@ -102,13 +102,13 @@ async def discord(ctx):
 async def _set(ctx, Type=None,*,thing=None):
   """Change the bot's discord game/stream!"""
   if Type is None:
-    await ctx.send('Usage: `.presence [game/stream] [message]`')
+    await ctx.send('Y u so dank? Usage: `*presence [game/stream] [message]`')
   else:
     if Type.lower() == 'stream':
-      await bot.change_presence(game=discord.Game(name=thing,type=1,url='https://www.twitch.tv/a'),status='online')
+      await bot.change_presence(game=discord.game(name=thing,type=1,url='https://www.twitch.tv/a'),status='online')
       await ctx.send(f'Set presence to. `Streaming {thing}`')
     elif Type.lower() == 'game':
-      await bot.change_presence(game=discord.Game(name=thing))
+      await bot.change_presence(game=discord.game(name=thing))
       await ctx.send(f'Set presence to `Playing {thing}`')
     elif Type.lower() == 'clear':
       await bot.change_presence(game=None)
