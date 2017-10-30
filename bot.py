@@ -31,7 +31,8 @@ async def say(ctx, *, message: str):
 @bot.command()
 async def ping(ctx):
     """We should play Ping Pong! While...returning your websocket latency."""
-    em.title ='Pong! Here is your websocket latency.'
+em = discord.Embed
+    em.title = 'Pong! Here is your websocket latency.'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
     
