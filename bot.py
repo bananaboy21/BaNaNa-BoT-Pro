@@ -149,9 +149,8 @@ class Song(discord.PCMVolumeTransformer):
         self.requester = requester
         self.channel = channel
         self.filename = info.get('_filename', self.ytdl.prepare_filename(info))
-        source = info.get('url', info.get('file', None)
-                          
-        if not source:
+        source = info.get('url', info.get('file', None)                          
+        if not source
             raise MusicError('Source not found.')
         super().__init__(discord.FFmpegPCMAudio(source, before_options='-nostdin', options='-vn'))
 
