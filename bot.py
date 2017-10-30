@@ -114,16 +114,7 @@ async def _set(ctx, Type=None,*,thing=None):
     else:
       await ctx.send('Usage: `.presence [game/stream] [message]`')
     
-    
-def duration_to_str(duration):
-
-    minutes, seconds = divmod(duration, 60)
-    hours, minutes = divmod(minutes, 60)
-    days, hours = divmod(hours, 24)
-
-    return f"{f'{days} days, ' if days > 0 else ''}{f'{hours} hours, ' if hours > 0 else ''}{f'{minutes} minutes, ' if minutes > 0 else ''}{seconds} seconds"
-
-
+   
 class MusicError(commands.UserInputError):
     pass
 
@@ -151,7 +142,7 @@ class Song(discord.PCMVolumeTransformer):
         self.filename = info.get('_filename', self.ytdl.prepare_filename(info))
         source = info.get('url', info.get('file', None)                          
         
-    @classmethod
+    
     async def create(cls, query, requester, channel, loop=None):
         try:
             is_file = pathlib.Path(query).is_file()
@@ -164,8 +155,6 @@ class Song(discord.PCMVolumeTransformer):
             return await cls.from_ytdl(query, requester, channel, loop)
 
 
-
-    @classmethod
     def from_file(cls, file, requester, channel):
         info = {
             'file': file,
@@ -175,22 +164,14 @@ class Song(discord.PCMVolumeTransformer):
         return cls(info, requester, channel)
 
 
-
-    @classmethod
     async def from_ytdl(cls, url, requester, channel, loop=None):
         loop = loop or asyncio.get_event_loop()
         info = await loop.run_in_executor(None, cls.ytdl.extract_info, url)
 
-
-
         if "entries" in info:
-
             info = info['entries'][0]
 
-
         return cls(info, requester, channel)
-
-
 
     def __str__(self):
         title = f"**{self.info['title']}**"
