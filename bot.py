@@ -115,23 +115,6 @@ async def _set(ctx, Type=None,*,thing=None):
       await ctx.send('Usage: `.presence [game/stream] [message]`')
     
    
-class MusicError(commands.UserInputError):
-    pass
-
-
-class Song(discord.PCMVolumeTransformer):
-    ytdl_opts = {
-        'default_search': 'auto',
-        'format': 'bestaudio/best',
-        'ignoreerrors': False,
-        'source_address': '0.0.0.0', # Make all connections via IPv4
-        'nocheckcertificate': True,
-        'restrictfilenames': True,
-        'logger': logging.getLogger(__name__),
-        'logtostderr': False,
-        'no_warnings': True,
-        'quiet': True,
-        'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s'
     }
     ytdl = youtube_dl.YoutubeDL(ytdl_opts)
 
@@ -148,7 +131,6 @@ class Song(discord.PCMVolumeTransformer):
             is_file = pathlib.Path(query).is_file()
         except:
             is_file = False
-
         if is_file:
             return cls.from_file(query, requester, channel)
         else:
@@ -302,7 +284,6 @@ class Music:
     @commands.has_permissions(manage_guild=True)
     async def join(self, ctx, *, channel: discord.VoiceChannel = None):
         """Summons the bot to a voice channel.
-
         If no channel is given, summons it to your current voice channel.
         """
         if channel is None and not ctx.author.voice:
