@@ -23,13 +23,19 @@ async def on_ready():
 
 
 @bot.command()
+async def readycheck(ctx):
+    """What do you expect? To check that I'm on and working?"""
+    await ctx.send("Well...If you see this...I am probably working. Don't check me too much or my peel comes off.")
+    
+
+@bot.command()
 async def say(ctx, *, message: str):
-    """Say Something As The Bot""" 
+    """Say something as the bot. Lay the blame on BaNaNa BoT!""" 
     await ctx.send(message)
 
 @bot.command()
 async def ping(ctx):
-    """We Should Play Ping Pong While Returning Your WebSocket Latency"""
+    """Totally cannot play Ping Pong. Or...return a websocket latency..."""
     em = discord.Embed()
     em.title ='Pong! Websocket Latency:'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
@@ -95,6 +101,9 @@ async def invite(ctx):
 async def discord(ctx):
     """Join my dank Discord server. For no dank reason."""
     await ctx.send("Join my Discord. For dank and for other stuff. Join: https://discord.gg/xSFetCJ")
+    
+    
+
     
 
 @bot.command(name='presence')
