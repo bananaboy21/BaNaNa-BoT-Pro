@@ -27,15 +27,15 @@ async def say(ctx, *, message: str):
     """Say Something As The Bot""" 
     await ctx.send(message)
 
-   
 @bot.command()
 async def ping(ctx):
-    """We should play Ping Pong! While...returning your websocket latency."""
+    """We Should Play Ping Pong While Returning Your WebSocket Latency"""
     em = discord.Embed()
-    em.title = 'Pong! Here is your websocket latency.'
+    em.title ='Pong! Websocket Latency:'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
-    
+   
+
 
 @bot.command(pass_context=True, hidden=True, name='eval')
 @commands.is_owner()
