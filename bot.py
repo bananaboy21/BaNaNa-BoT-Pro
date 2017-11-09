@@ -33,15 +33,9 @@ async def say(ctx, *, message: str):
     """Say something as the bot. Lay the blame on BaNaNa BoT!""" 
     await ctx.send(message)
 
-@bot.command()
-async def ping(ctx):
-    """Totally cannot play Ping Pong. Or...return a websocket latency..."""
-    em = discord.Embed()
-    em.title ='Pong! Websocket Latency:'
-    em.description = f"{bot.ws.latency * 1000:.4f} ms"
-    await ctx.send(embed=em)
-   
 
+
+   
 
 @bot.command(pass_context=True, hidden=True, name='eval')
 @commands.is_owner()
@@ -102,9 +96,7 @@ async def discord(ctx):
     """Join my dank Discord server. For no dank reason."""
     await ctx.send("Join my Discord. For dank and for other stuff. Join: https://discord.gg/xSFetCJ")
     
-    
 
-    
 
 @bot.command(name='presence')
 @commands.is_owner()
@@ -124,6 +116,15 @@ async def _set(ctx, Type=None,*,thing=None):
       await ctx.send('Cleared Presence')
     else:
       await ctx.send('Usage: `.presence [game/stream] [message]`')
+    
+        
+@bot.command()
+async def ping(ctx):
+    """Totally cannot play Ping Pong. Or...return a websocket latency..."""
+    em = discord.Embed()
+    em.title ='Pong! Websocket Latency:'
+    em.description = f"{bot.ws.latency * 1000:.4f} ms"
+    await ctx.send(embed=em)
     
     
 if not os.environ.get('TOKEN'):
