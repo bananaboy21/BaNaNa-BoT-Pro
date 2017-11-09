@@ -122,7 +122,7 @@ async def _set(ctx, Type=None,*,thing=None):
 async def ping(ctx):
     """Totally cannot play Ping Pong. Or...return a websocket latency..."""
     em = discord.Embed()
-    em.title ='Pong! Websocket Latency:'
+    em.title = 'Pong! Websocket Latency:'
     em.description = f"{bot.ws.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
     
