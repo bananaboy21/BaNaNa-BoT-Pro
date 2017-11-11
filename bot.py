@@ -32,9 +32,6 @@ async def readycheck(ctx):
 async def say(ctx, *, message: str):
     """Say something as the bot. Lay the blame on BaNaNa BoT!""" 
     await ctx.send(message)
-
-
-
    
 
 @bot.command(pass_context=True, hidden=True, name='eval')
@@ -96,7 +93,6 @@ async def discord(ctx):
     """Join my dank Discord server. For no dank reason."""
     await ctx.send("Join my Discord. For dank and for other stuff. Join: https://discord.gg/xSFetCJ")
     
-
 
 @bot.command(name='presence')
 @commands.is_owner()
