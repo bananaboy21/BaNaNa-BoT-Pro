@@ -113,16 +113,7 @@ async def _set(ctx, Type=None,*,thing=None):
     else:
       await ctx.send('Usage: `.presence [game/stream] [message]`')
     
-        
-@bot.command()
-async def ping(ctx):
-    """Totally cannot play Ping Pong. Or...return a websocket latency..."""
-    em = discord.Embed()
-    em.title = 'Pong! Websocket Latency:'
-    em.description = f"{bot.ws.latency * 1000:.4f} ms"
-    await ctx.send(embed=em)
-    
-    
+           
 if not os.environ.get('TOKEN'):
     print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
