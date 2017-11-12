@@ -18,3 +18,8 @@ class banana:
         em.title = 'Pong! Websocket Latency:'
         em.description = f"{bot.ws.latency * 1000:.4f} ms"
         await ctx.send(embed=em)
+        
+        
+    def setup(bot): 
+        bot.add_cog(banana(bot))
+
