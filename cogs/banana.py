@@ -11,7 +11,7 @@ class banana:
         self.bot = bot
         
         
-    @bot.command()
+    @commands.command()
     async def ping(self, ctx):
         """Totally cannot play Ping Pong. Or...return a websocket latency..."""
         em = discord.Embed()
