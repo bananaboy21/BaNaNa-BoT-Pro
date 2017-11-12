@@ -20,6 +20,6 @@ class banana:
         await ctx.send(embed=em)
         
         
-    def setup(bot): 
-        bot.add_cog(banana(bot))
+def setup(bot): 
+    bot.add_cog(banana(bot))
 
