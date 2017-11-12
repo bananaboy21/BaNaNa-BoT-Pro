@@ -1,4 +1,4 @@
- import discord
+import discord
 import sys
 import os
 import io
