@@ -12,12 +12,12 @@ class banana:
         
         
     @commands.command()
-        async def ping(self, ctx)
-            """Check If The Bot Is Working."""
-            em = discord.Embed()
-            em.title = 'Pong!'
-            em.description = "Bot Is Up And Working"
-            await ctx.send(embed=em)
+    async def ping(self, ctx)
+        """Check If The Bot Is Working."""
+        em = discord.Embed()
+        em.title = 'Pong!'
+        em.description = "Bot Is Up And Working"
+        await ctx.send(embed=em)
         
         
 def setup(bot): 
