@@ -13,10 +13,10 @@ class banana:
         
     @commands.command()
         async def ping(self, ctx)
-            """Playing Ping Pong. Returning your websocket latency."""
+            """Check If The Bot Is Working."""
             em = discord.Embed()
-            em.title = 'Pong! This is your websocket latency:'
-            em.description = f"{bot.ws.latency * 1000:.4f} ms"
+            em.title = 'Pong!'
+            em.description = "Bot Is Up And Working"
             await ctx.send(embed=em)
         
         
